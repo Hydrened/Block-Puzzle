@@ -1,5 +1,4 @@
-#ifndef H2DE_CAMERA_H
-#define H2DE_CAMERA_H
+#pragma once
 
 /**
  * @file H2DE_camera.h
@@ -19,7 +18,6 @@
  */
 
 #include <H2DE/engine/H2DE_engine.h>
-#include <string>
 class H2DE_Engine;
 class H2DE_BasicObject;
 
@@ -251,7 +249,7 @@ public:
      * @param pauseSensitive If true, animation pauses when the game is paused.
      * @return Timeline controlling this animation.
      */
-    H2DE_Timeline* setTranslate(const H2DE_Translate& translate, uint32_t duration, H2DE_Easing easing, const std::function<void()>& completed = nullptr, bool pauseSensitive = true);
+    H2DE_Timeline* setTranslate(const H2DE_Translate& translate, uint32_t duration, H2DE_Easing easing = H2DE_EASING_LINEAR, const std::function<void()>& completed = nullptr, bool pauseSensitive = true);
     /**
      * @brief Animate the camera's game width to a new value over time.
      * 
@@ -264,7 +262,7 @@ public:
      * @param pauseSensitive If true, animation pauses when the game is paused.
      * @return Timeline controlling this animation.
      */
-    H2DE_Timeline* setGameWidth(float width, uint32_t duration, H2DE_Easing easing, const std::function<void()>& completed = nullptr, bool pauseSensitive = true);
+    H2DE_Timeline* setGameWidth(float width, uint32_t duration, H2DE_Easing easing = H2DE_EASING_LINEAR, const std::function<void()>& completed = nullptr, bool pauseSensitive = true);
     /**
      * @brief Animate the interface width over time.
      * 
@@ -277,7 +275,7 @@ public:
      * @param pauseSensitive If true, animation pauses when the game is paused.
      * @return Timeline controlling this animation.
      */
-    H2DE_Timeline* setInterfaceWidth(float width, uint32_t duration, H2DE_Easing easing, const std::function<void()>& completed = nullptr, bool pauseSensitive = true);
+    H2DE_Timeline* setInterfaceWidth(float width, uint32_t duration, H2DE_Easing easing = H2DE_EASING_LINEAR, const std::function<void()>& completed = nullptr, bool pauseSensitive = true);
 
     friend class H2DE_Engine;
     friend class H2DE_Renderer;
@@ -305,5 +303,3 @@ private:
 
     H2DE_Scale getScale(float width) const;
 };
-
-#endif

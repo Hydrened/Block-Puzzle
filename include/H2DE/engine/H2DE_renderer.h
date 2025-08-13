@@ -1,8 +1,8 @@
-#ifndef H2DE_RENDERER_H
-#define H2DE_RENDERER_H
+#pragma once
 
 #include <H2DE/engine/H2DE_engine.h>
 class H2DE_Engine;
+class H2DE_Surface;
 class H2DE_Border;
 
 class H2DE_Renderer {
@@ -61,7 +61,7 @@ private:
     float renderSurfaceGetWorldRotation(const H2DE_Object* object, H2DE_Surface* surface) const noexcept;
     SDL_Point renderSurfaceGetLocalPivot(const H2DE_Object* object, H2DE_Surface* surface) const;
     static SDL_RendererFlip renderSurfaceGetWorldFlip(const H2DE_Object* object, H2DE_Surface* surface) noexcept;
-    static std::optional<SDL_Rect> renderSurfaceGetPossibleSrcRect(H2DE_Surface* surface);
+    std::optional<SDL_Rect> renderSurfaceGetPossibleSrcRect(const H2DE_Object* object, H2DE_Surface* surface) const;
 
     void renderObjectsHitboxes();
     void renderHitboxes(const H2DE_Object* object);
@@ -96,5 +96,3 @@ private:
     friend class H2DE_Engine;
     friend class H2DE_AssetLoaderManager;
 };
-
-#endif

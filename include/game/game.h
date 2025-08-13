@@ -1,5 +1,4 @@
-#ifndef GAME_H
-#define GAME_H
+#pragma once
 
 #include <H2DE/H2DE.h>
 #include "utils.h"
@@ -25,8 +24,7 @@ private:
     void initEngine();
     void initData();
     void initLevel();
+    void loadAssets();
 
     void handleEvents(SDL_Event event);
 };
-
-#endif

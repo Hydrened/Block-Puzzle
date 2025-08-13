@@ -1,9 +1,8 @@
-#ifndef UTILS_H
-#define UTILS_H
+#pragma once
 
 #include <H2DE/utils/H2DE_utils.h>
 
-#define GAME_SIZE 10
+#define NB_CHOICES 3
 #define NO_SELECTED_PIECES -1
 
 using PieceID = uint8_t;
@@ -27,5 +26,3 @@ struct Choice {
     Piece piece = Piece();
     H2DE_ButtonObject* object = nullptr;
 };
-
-#endif
